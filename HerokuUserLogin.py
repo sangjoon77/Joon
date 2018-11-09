@@ -67,7 +67,6 @@ def addUser(newuser,newpass):
     
 ###### Step 2. Receive user input from login HTML page
 app = Flask(__name__)
-app.run(environ.get('PORT'))
 
 @app.route('/Login', methods=['GET', 'POST'])
 def login():
