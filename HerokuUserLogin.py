@@ -10,6 +10,7 @@ import urllib.parse as urlparse
 import pdb
 
 from flask import Flask, render_template, redirect, url_for, request
+from flask.ext.sqlalchemy import SQLAlchemy
 
 
 ########################################################
@@ -67,7 +68,7 @@ def addUser(newuser,newpass):
     
 ###### Step 2. Receive user input from login HTML page
 app = Flask(__name__)
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/Login'
 @app.route('/Login', methods=['GET', 'POST'])
 def login():
     receivedUsername = request.args.get('username')
