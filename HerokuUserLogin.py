@@ -8,9 +8,9 @@ import os
 import psycopg2
 import urllib.parse as urlparse
 import pdb
-#import HerokuImageUpload
-os.system("python HerokuImageUpload.py")
-82hpNCx.:Z3b3!g
+import HerokuImageUpload
+#os.system("python HerokuImageUpload.py")
+
 
 from flask import Flask, render_template, redirect, url_for, request
 #from flask.ext.sqlalchemy import SQLAlchemy
