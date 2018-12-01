@@ -8,9 +8,10 @@ import os
 import psycopg2
 import urllib.parse as urlparse
 import pdb
+import HerokuImageUpload
 
 from flask import Flask, render_template, redirect, url_for, request
-##from flask.ext.sqlalchemy import SQLAlchemy
+#from flask.ext.sqlalchemy import SQLAlchemy
 
 
 ########################################################
@@ -69,8 +70,11 @@ def addUser(newuser,newpass):
 ###### Step 2. Receive user input from login HTML page
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/Login'
-@app.route('/Login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
+    print('yo')
+    print(request.args.get('username'))
+    print(request.args)
     receivedUsername = request.args.get('username')
     receivedPassword = request.args.get('password')
     if receivedUsername != None and receivedPassword != None:
